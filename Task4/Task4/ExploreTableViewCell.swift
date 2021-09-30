@@ -72,19 +72,14 @@ class ExploreTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
 
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         if let vc = storyBoard.instantiateViewController(withIdentifier:"DetailViewController") as? DetailViewController {
-            
-            vc.name = namearr[indexPath.row]
-            vc.imagename = namearr[indexPath.row]
 
-            print("You tapped the cell\(indexPath) with car name \(namearr[indexPath.row]) ")
-
-          
-            vc.img.image = UIImage(named: namearr[indexPath.row])
+          vc.name = namearr[indexPath.row]
+          print("You tapped the cell\(indexPath) with car name \(namearr[indexPath.row]) ")
           topViewController()?.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
-    
+}
 //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
 //        didSelectClosure?(namearr.indexPath.row, indexPath.row)
@@ -107,8 +102,10 @@ class ExploreTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
 //           let cell = collectionView.cellForItem(at: indexPath) as! ExploreTableViewCell
 //           //self.cellDelegate?.collectionView(collectionviewcell: cell, index: indexPath.item, didTappedInTableViewCell: self)
 //       }
-//    
-}
+//
+    
+    
+
     
     
     

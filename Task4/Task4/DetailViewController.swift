@@ -9,18 +9,16 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet var lbl: UILabel!
-    @IBOutlet var img: UIImageView!
-    var name = ""
-//    var myimage = UIImage()
-    var imagename = String()
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        lbl.text = name
-        img.image = UIImage(named: imagename)
+   @IBOutlet var lbl: UILabel!
+   @IBOutlet var img: UIImageView!
 
-    }
-    
+   var name = ""
+
+
+   override func viewDidLoad() {
+       super.viewDidLoad()
+       lbl.text = name
+       img.image = UIImage(named: name)
+
+   }
 }
