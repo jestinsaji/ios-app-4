@@ -29,8 +29,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vm4-07-cBI">
-                                                    <rect key="frame" x="15" y="0.0" width="399" height="150"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                                    <color key="backgroundColor" red="0.9152866005897522" green="0.24655312299728394" blue="0.20107686519622803" alpha="0.50165017239999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LMt-KI-9Hw">
                                                         <size key="itemSize" width="132" height="134"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -74,7 +74,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="Vm4-07-cBI" secondAttribute="bottom" id="Gqm-JR-xLs"/>
                                                 <constraint firstItem="Vm4-07-cBI" firstAttribute="top" secondItem="6bc-5h-bnV" secondAttribute="top" id="V1N-li-cz7"/>
-                                                <constraint firstItem="Vm4-07-cBI" firstAttribute="leading" secondItem="6bc-5h-bnV" secondAttribute="leading" constant="15" id="aya-iX-PkZ"/>
+                                                <constraint firstItem="Vm4-07-cBI" firstAttribute="leading" secondItem="6bc-5h-bnV" secondAttribute="leading" id="aya-iX-PkZ"/>
                                                 <constraint firstAttribute="trailing" secondItem="Vm4-07-cBI" secondAttribute="trailing" id="jyH-Wy-Jla"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -106,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928.98550724637687" y="77.678571428571431"/>
+            <point key="canvasLocation" x="940.57971014492762" y="77.678571428571431"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="tgw-oB-27p">
@@ -152,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TBK-Cs-Vtu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1637.68115942029" y="77.678571428571431"/>
+            <point key="canvasLocation" x="1648" y="78"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1G3-ok-OiC">
@@ -170,7 +170,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkB-Dc-tTw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="77.678571428571431"/>
+            <point key="canvasLocation" x="214" y="78"/>
         </scene>
     </scenes>
     <resources>

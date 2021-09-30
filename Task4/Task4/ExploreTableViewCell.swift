@@ -10,8 +10,7 @@ import UIKit
 typealias DidSelectClosure = ((_ tableIndex: Int?,_ collectionIndex: Int?)-> Void)
 
 class ExploreTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-//    weak var cellDelegate: CollectionViewCellDelegate? //delegate
-    //cell.cellDelegate = self // delegate method
+
 
     @IBOutlet var collectionView: UICollectionView!
     
@@ -43,31 +42,6 @@ class ExploreTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
     }
     
 
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"DetailViewController") as? DetailViewController
-//
-//        vc?.name = namearr[indexPath.row]
-//        vc?.imagename = namearr[indexPath.row]
-//        //self.navigationController.pushViewController(vc, animated: true)
-//
-//    }
-   
-    func topViewController() -> UIViewController? {
-
-        let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
-
-        if var topController = keyWindow?.rootViewController {
-
-            while let presentedViewController = topController.presentedViewController {
-                topController = presentedViewController
-            }
-            return topController
-
-        } else {
-            return nil
-        }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -75,11 +49,54 @@ class ExploreTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
 
           vc.name = namearr[indexPath.row]
           print("You tapped the cell\(indexPath) with car name \(namearr[indexPath.row]) ")
-          topViewController()?.navigationController?.pushViewController(vc, animated: true)
+          UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
 }
+
+    extension UIApplication {
+
+         class func topViewController(_ viewController: UIViewController? = UIApplication.shared.connectedScenes
+                                 .filter({$0.activationState == .foregroundActive})
+                                 .compactMap({$0 as? UIWindowScene})
+                                 .first?.windows
+                                 .filter({$0.isKeyWindow}).first?.rootViewController) -> UIViewController? {
+             if let nav = viewController as? UINavigationController {
+                 return topViewController(nav.visibleViewController)
+             }
+             if let tab = viewController as? UITabBarController {
+                 if let selected = tab.selectedViewController {
+                     return topViewController(selected)
+                 }
+             }
+             if let presented = viewController?.presentedViewController {
+                 return topViewController(presented)
+             }
+             return viewController
+         }
+     }
+    
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
 //        didSelectClosure?(namearr.indexPath.row, indexPath.row)
@@ -89,6 +106,14 @@ class ExploreTableViewCell: UITableViewCell, UICollectionViewDelegate, UICollect
 //     }
 //
 
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"DetailViewController") as? DetailViewController
+//
+//        vc?.name = namearr[indexPath.row]
+//        vc?.imagename = namearr[indexPath.row]
+//        //self.navigationController.pushViewController(vc, animated: true)
+//
+//    }
     //delegate method
     
 ////    protocol CollectionViewCellDelegate: AnyObject {

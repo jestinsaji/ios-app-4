@@ -10,7 +10,6 @@ import UIKit
 class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet var tableView: UITableView!
-   // weak var cellDelegate: CollectionViewCellDelegate? //delegate
 
     var namearr = ["images-1", "images-2", "images-3", "images-4", "images-5"]
 
@@ -22,30 +21,13 @@ class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
        return 10
         // return namearr.count
     }
-    
-    func detailView(tindex:Int,cindex:Int)
-    {
-       guard let vc = UIStoryboard(name: "DetailViewController", bundle: nil).instantiateViewController(withIdentifier:"DetailViewController") as? DetailViewController
-       else{
-           return
-       }
-//        vc?.name = namearr[indexPath.row]
-//        vc?.img.image = UIImage(named: namearr[indexPath.row])
-       // vc.name = namearr.[tindex].namearr.namearr[cindex]
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
+ 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ExploreTableViewCell", for: indexPath)as! ExploreTableViewCell
         
-        cell.didSelectClosure = {tableIndex, collectionIndex in
-            if let tableIndexp = tableIndex, let collectionIndexp = collectionIndex
-            {
-                self.detailView(tindex: tableIndexp, cindex: collectionIndexp)
-            }
-        }
+
         return cell
         
     }
@@ -54,6 +36,29 @@ class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return 150
     }
     
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        let vc = UIStoryboard(name: "DetailViewController", bundle: nil).instantiateViewController(withIdentifier:"vc") as? DetailViewController
 //        vc?.name = namearr[indexPath.row]
@@ -70,7 +75,7 @@ class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 //        }
     
 
-}
+//}
     
 
 
